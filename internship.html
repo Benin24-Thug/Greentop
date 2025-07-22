@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GreenTop Internship</title>
+    <style>
+         .hire-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: blue;
+            color: white;
+            padding: 6px 12px;
+            border: none;
+            border-radius: 8px;
+            text-decoration: none;
+        }
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #b2f2a8;
+            overflow-x: hidden;
+        }
+        header {
+            text-align: center;
+            padding: 20px;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 36px;
+        }
+        header p {
+            margin: 0;
+            font-size: 16px;
+        }
+        .banner {
+            width: 100%;
+            height: 500px;
+            background-image: url('https://static2.bigstockphoto.com/3/4/1/large1500/143032361.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        .section {
+            padding: 30px 20px;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .card {
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+        .card-content {
+            max-width: 400px;
+            text-align: left;
+        }
+        .card img {
+            width: 400px;
+            border-radius: 10px;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #2196F3;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        footer {
+            background-color: #a0e89b;
+            padding: 20px;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            font-size: 14px;
+        }
+        footer div {
+            margin: 10px;
+        }
+        footer h4 {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>GreenTop</h1>
+        <p>Information Technology</p>
+        <a href="http://127.0.0.1:5500/Greentop.html" class="hire-btn">Home</a>
+    </header>
+
+    <div class="banner"></div>
+
+    <div class="section" id="intro">
+        <h2><i>Summer Internship</i></h2>
+        <p>GreenTop’s Summer Internship Program provides students with hands-on experience in
+            software development, web design, and IT consulting. Interns work on real projects under
+            expert guidance, gaining valuable industry insights. The program helps bridge academic
+            learning with practical skills, preparing them for future tech careers.</p>
+    </div>
+
+    <div class="section" id="app-dev">
+        <div class="card">
+            <div class="card-content">
+                <h3>Application Development</h3>
+                <p><strong>Course:</strong> Application Development<br>
+                <strong>Duration:</strong> 1 Month<br>
+                <strong>Mode:</strong> Offline<br>
+                <strong>Eligibility:</strong> BCA / B.Tech / Computer Science students<br>
+                <strong>Skills:</strong> Java, Android Studio, Firebase<br>
+                <a href="http://127.0.0.1:5500/Register.html" class="button">Register now</a></p>
+            </div>
+            <img src="https://thumbs.dreamstime.com/z/designer-creating-website-computer-female-s-hand-using-graphic-tablet-148951874.jpg" alt="Application Development">
+        </div>
+    </div>
+
+    <div class="section" id="web-dev">
+        <div class="card">
+            <img src="https://tse2.mm.bing.net/th/id/OIP.PtRwHX-XhuoMfTxlIVDjEwHaEK?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Web Development">
+            <div class="card-content">
+                <h3>Web Development</h3>
+                <p><strong>Course:</strong> Web Development<br>
+                <strong>Duration:</strong> 1 Month<br>
+                <strong>Mode:</strong> Offline<br>
+                <strong>Eligibility:</strong> BCA / B.Tech / Computer Science students<br>
+                <strong>Skills:</strong> HTML, CSS, JavaScript, Git<br>
+                <a href="http://127.0.0.1:5500/Register.html" class="button">Register now</a></p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div>
+            <h4>Contact Us</h4>
+           <a href="tel:+919876543210">+91 9876543210</a>
+            <br>
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=greentop@gmail.com" target="_blank">
+    greentop@gmail.com
+</a>
+            <br>
+            <a href="https://www.linkedin.com/feed/">Linkedin</a><br>
+            <a href="https://www.instagram.com/">Instagram</a>
+        </div>
+        <div>
+            <h4>About Us</h4>
+            <p>Our team<br>
+            Mission<br>
+            Careers</p>
+        </div>
+        <div>
+            <h4>Feedback</h4>
+            <a href="http://127.0.0.1:5500/feedback.html">Summit Feedback</a><br>
+            <a href="http://127.0.0.1:5500/Helpcenter.html">Help center</a>
+        </div>
+        <div>
+            <h4>Address</h4>
+             <a href="https://maps.app.goo.gl/pNc3zN1x9bBZ6rHy9">GreenTop<br>Nithiravillai</a>
+        </div>
+    </footer>
+
+    <script>
+        const sections = document.querySelectorAll('.section');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.2
+        });
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>

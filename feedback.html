@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Greentop Feedback</title>
+  <style>
+    body {
+      background-color: #ccffcc; /* old green */
+      font-family: Calibri, sans-serif;
+      text-align: center;
+      padding: 50px;
+    }
+
+    h1 {
+      font-size: 36px;
+      color: #006400;
+    }
+
+    .feedback-box {
+      width: 60%;
+      margin: 0 auto;
+    }
+
+    textarea {
+      width: 100%;
+      height: 200px;
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      resize: none;
+    }
+
+    button {
+      margin-top: 15px;
+      padding: 10px 25px;
+      font-size: 16px;
+      border: none;
+      border-radius: 6px;
+      background-color: #008000;
+      color: white;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #006400;
+    }
+
+    #thankYouMessage {
+      margin-top: 20px;
+      font-size: 18px;
+      color: darkgreen;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+
+  <h1>GreenTop</h1>
+  <h1>Information Technology</h1>
+  <p>We value your feedback! Please share your thoughts with us.</p>
+  <h1>Feedback</h1>
+  <p>Your feedback helps us grow! Let us know how we can serve you better.</p>
+
+  <div id="feedbackContainer" class="feedback-box">
+    <textarea id="feedbackText" placeholder="Type your feedback here..." required></textarea><br>
+    <button onclick="submitFeedback()">Submit</button>
+  </div>
+
+  <p id="thankYouMessage">✅ Thanks for your feedback!</p>
+
+  <script>
+    function submitFeedback() {
+      const feedback = document.getElementById("feedbackText").value.trim();
+      const feedbackContainer = document.getElementById("feedbackContainer");
+      const thankYouMessage = document.getElementById("thankYouMessage");
+
+      if (!feedback) {
+        alert("Please enter feedback before submitting.");
+        return;
+      }
+
+      // Save feedback as a .txt file
+      const blob = new Blob([feedback], { type: "text/plain" });
+      const link = document.createElement("a");
+      link.href = URL.createObjectURL(blob);
+      link.download = "greentop_feedback.txt";
+      link.click();
+
+      // Hide feedback box and show thank you
+      feedbackContainer.style.display = "none";
+      thankYouMessage.style.display = "block";
+
+      // Hide thank you after 2 seconds and bring feedback box back
+      setTimeout(() => {
+        thankYouMessage.style.display = "none";
+        feedbackContainer.style.display = "block";
+        document.getElementById("feedbackText").value = ""; // Clear box
+      }, 2000);
+    }
+  </script>
+
+</body>
+</html>
