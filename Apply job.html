@@ -4,15 +4,17 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Apply Now - GreenTop</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
+
     html, body {
       overflow-x: hidden;
-      font-family: 'Segoe UI', Tahoma, sans-serif;
+      font-family: 'Poppins', sans-serif;
       background-color: #e6ffe6;
     }
 
@@ -98,6 +100,12 @@
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
       padding: 20px;
       width: 280px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+    .card:hover {
+      transform: translateY(-8px) scale(1.03);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
     }
     .card h3 {
       color: #028d02;
