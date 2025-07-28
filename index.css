@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 
-body {
+body.index {
   font-family: Arial, sans-serif;
   background-color: #b2f2a8;
   line-height: 1.6;
