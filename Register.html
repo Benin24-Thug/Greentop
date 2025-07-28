@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register Now - GreenTop</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #ccffd6;
+      text-align: center;
+      margin: 0;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 600px;
+      margin: auto;
+      background-color: #b2f2a8;
+      padding: 20px;
+      border-radius: 10px;
+      margin-top: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #014d01;
+    }
+
+    input, textarea, select {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 5px;
+      box-sizing: border-box;
+    }
+
+    label {
+      font-weight: bold;
+    }
+
+    .row {
+      display: flex;
+      gap: 10px;
+    }
+
+    .row input {
+      width: 100%;
+    }
+
+    .submit-btn {
+      background-color: #014d01;
+      color: white;
+      cursor: pointer;
+    }
+
+    .submit-btn:hover {
+      background-color: #026602;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #a0e6a8;
+      margin-top: 20px;
+    }
+
+    .footer-links a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: #014d01;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>GreenTop<br><small>Information Technology</small></h1>
+    <h2>Register Now</h2>
+    <form action="save_response.php" method="post" enctype="multipart/form-data">
+      <input type="text" name="firstname" placeholder="First Name" required>
+      <input type="text" name="lastname" placeholder="Surname" required>
+      <input type="email" name="email" placeholder="Email" required>
+
+      <div class="row">
+        <input type="text" name="phone" placeholder="Phone Number" required>
+        <input type="text" name="gender" placeholder="Gender">
+      </div>
+
+      <div class="row">
+        <input type="number" name="age" placeholder="Age">
+        <input type="date" name="dob" placeholder="Date of Birth">
+      </div>
+
+      <textarea name="address" placeholder="Address" rows="3"></textarea>
+
+      <input type="text" name="position" placeholder="Internship Role">
+
+      <select name="Projects done efore">
+        <option value="">Projects done before</option>
+        
+      </select>
+
+      <label>Attach your resume here</label>
+      <input type="file" name="resume">
+
+      <textarea name="reason" placeholder="Why do you want to join us?" rows="4"></textarea>
+
+      <label>
+        <input type="checkbox" name="confirm" required>
+        I confirm that the information provided is accurate.
+      </label>
+
+      <input type="submit" value="Submit" class="submit-btn">
+    </form>
+  </div>
+
+  <footer>
+    <div class="footer-links">
+      <a href="http://127.0.0.1:5500/contact.html">Contact Us</a> |
+      <a href="http://127.0.0.1:5500/about%20page.html">About Us</a> |
+      <h4>Feedback</h4>
+            <a href="feedback.html">Summit Feedback</a>
+            <a href="Helpcenter.html">Help center</a>
+       <h4>Address</h4>
+            <a href="https://maps.app.goo.gl/pNc3zN1x9bBZ6rHy9">GreenTop,Nithiravillai</a>
+    </div>
+    <p>&copy; 2025 GreenTop</p>
+  </footer>
+
+</body>
+</html>

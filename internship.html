@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GreenTop Internship</title>
+    <link rel="stylesheet" href="internship.css">
+</head>
+<body class="internship">
+    <header>
+        <div>
+            <h1>GreenTop</h1>
+            <p>Information Technology</p>
+        </div>
+        <a href="index.html" class="btn-hover color-5">Home</a>
+    </header>
+
+    <div class="banner"></div>
+
+    <div class="section" id="intro">
+        <h2><i>Summer Internship</i></h2>
+        <p>GreenTop’s Summer Internship Program provides students with hands-on experience in
+            software development, web design, and IT consulting. Interns work on real projects under
+            expert guidance, gaining valuable industry insights. The program helps bridge academic
+            learning with practical skills, preparing them for future tech careers.</p>
+    </div>
+
+    <div class="section" id="app-dev">
+        <div class="card">
+            <div class="card-content">
+                <h3>Application Development</h3>
+                <p><strong>Course:</strong> Application Development<br>
+                <strong>Duration:</strong> 1 Month<br>
+                <strong>Mode:</strong> Offline<br>
+                <strong>Eligibility:</strong> BCA / B.Tech / Computer Science students<br>
+                <strong>Skills:</strong> Java, Android Studio, Firebase<br>
+                <a href="Register.html" class="btn-hover color-9">Register now</a>
+                </p>
+            </div>
+            <img src="https://thumbs.dreamstime.com/z/designer-creating-website-computer-female-s-hand-using-graphic-tablet-148951874.jpg" alt="Application Development">
+        </div>
+    </div>
+
+    <div class="section" id="web-dev">
+        <div class="card">
+            <div class="card-content">
+                <h3>Web Development</h3>
+                <p><strong>Course:</strong> Web Development<br>
+                <strong>Duration:</strong> 1 Month<br>
+                <strong>Mode:</strong> Offline<br>
+                <strong>Eligibility:</strong> BCA / B.Tech / Computer Science students<br>
+                <strong>Skills:</strong> HTML, CSS, JavaScript, Git<br>
+                <a href="Register.html" class="btn-hover color-9">Register now</a></p>
+            </div>
+            <img src="https://tse2.mm.bing.net/th/id/OIP.PtRwHX-XhuoMfTxlIVDjEwHaEK?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Web Development">
+        </div>
+    </div>
+
+    <footer>
+        <div>
+            <h4>Contact Us</h4>
+            <a href="tel:+919876543210">+91 9876543210</a>
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=greentop@gmail.com" target="_blank">greentop@gmail.com</a>
+            <a href="https://www.linkedin.com/feed/">Linkedin</a>
+            <a href="https://www.instagram.com/">Instagram</a>
+        </div>
+        <div>
+            <h4>About Us</h4>
+            <a href="team.html">Our Team</a>
+            <a href="mission.html">Mission</a>
+        </div>
+        <div>
+            <h4>Feedback</h4>
+            <a href="feedback.html">Sumbit Feedback</a>
+            <a href="Helpcenter.html">Help center</a>
+        </div>
+        <div>
+            <h4>Address</h4>
+            <a href="https://maps.app.goo.gl/pNc3zN1x9bBZ6rHy9">GreenTop<br>Nithiravillai</a>
+        </div>
+    </footer>
+
+    <script>
+        const sections = document.querySelectorAll('.section');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.2
+        });
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>

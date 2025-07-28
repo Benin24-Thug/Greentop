@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GreenTop | Our Mission</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to bottom right, #e7fbe9, #d3f2dc);
+      color: #1b3b1b;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    /* Navigation Bar */
+    nav {
+      background: linear-gradient(135deg, #52b788, #40916c);
+      padding: 12px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    }
+
+    nav .logo {
+      font-size: 1.5em;
+      font-weight: bold;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    nav .nav-buttons {
+      display: flex;
+      gap: 15px;
+    }
+
+    /* Gradient Buttons */
+    .btn-hover {
+      display: inline-block;
+      text-decoration: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      font-weight: 600;
+      color: #fff;
+      cursor: pointer;
+      border: none;
+      background-size: 300% 100%;
+      background-position: 0 0;
+      border-radius: 50px;
+      transition: all 0.4s ease-in-out;
+    }
+
+    /* Green Gradient Button */
+    .btn-hover.color-5 {
+      background-image: linear-gradient(to right, #0ba360, #3cba92, #30dd8a, #2bb673);
+      box-shadow: 0 4px 15px 0 rgba(23, 168, 108, 0.75);
+    }
+    .btn-hover.color-5:hover {
+      background-position: 100% 0;
+      opacity: 0.9;
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(135deg, #76c893, #52b788);
+      padding: 40px 20px;
+      text-align: center;
+      color: #fff;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      animation: fadeInDown 1s ease;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.8em;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    header p {
+      margin-top: 8px;
+      font-size: 1.2em;
+      font-style: italic;
+      opacity: 0.9;
+      animation: fadeInUp 1s ease;
+    }
+
+    /* Mission Container */
+    .mission-container {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 30px;
+      background-color: #ffffff;
+      border-radius: 16px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      flex: 1;
+      animation: fadeIn 1.5s ease;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .mission-container:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+    }
+
+    .mission-container h2 {
+      color: #0b632d;
+      text-align: center;
+      font-size: 2em;
+      margin-bottom: 15px;
+    }
+
+    .mission-container p {
+      font-size: 1.1em;
+      line-height: 1.8em;
+      text-align: center;
+      color: #333;
+      margin-bottom: 25px;
+    }
+
+    /* Values Section */
+    .values {
+      margin-top: 20px;
+      padding: 15px;
+      background-color: #f0fff4;
+      border-radius: 10px;
+    }
+
+    .values h3 {
+      text-align: center;
+      color: #146c3d;
+      margin-bottom: 10px;
+      font-size: 1.5em;
+    }
+
+    .values ul {
+      list-style-type: none;
+      padding: 0;
+      font-size: 1.05em;
+      line-height: 1.8em;
+      text-align: left;
+      max-width: 400px;
+      margin: 0 auto;
+    }
+
+    .values ul li {
+      position: relative;
+      padding-left: 30px;
+      margin-bottom: 8px;
+    }
+
+    .values ul li::before {
+      content: "✔";
+      position: absolute;
+      left: 0;
+      color: #34a853;
+      font-weight: bold;
+    }
+
+    /* Footer */
+    footer {
+      background: #b9efc0;
+      padding: 15px 20px;
+      text-align: center;
+      font-size: 0.9em;
+      color: #1b3b1b;
+      border-top: 2px solid #9be5a4;
+      margin-top: auto;
+    }
+
+    footer a {
+      text-decoration: none;
+      color: #0b632d;
+      font-weight: bold;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInDown {
+      0% { opacity: 0; transform: translateY(-20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Responsive */
+  @media (max-width: 768px) {
+  nav {
+    flex-direction: row;
+    justify-content: space-between; /* Logo left, buttons right */
+    align-items: center;
+  }
+
+  nav .nav-buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 6px;
+    flex-wrap: nowrap; /* Keep all buttons in one row */
+  }
+
+  .btn-hover {
+    padding: 6px 12px;  /* Smaller padding to fit on small screens */
+    font-size: 14px;    /* Slightly smaller text */
+  }
+
+  body {
+    overflow-x: hidden; /* Prevent horizontal scroll */
+  }
+}
+
+    
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav>
+    <div class="logo">GreenTop</div>
+    <div class="nav-buttons">
+      <a href="index.html" class="btn-hover color-5">Home</a>
+      <a href="career.html" class="btn-hover color-5">Careers</a>
+      <a href="contact.html" class="btn-hover color-5">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header>
+    <h1>GreenTop IT Company</h1>
+    <p>— Our Mission —</p>
+  </header>
+
+  <!-- Mission Section -->
+  <div class="mission-container">
+    <h2>Mission Statement</h2>
+    <p>
+      At GreenTop IT Company, our mission is to empower businesses and institutions through innovative, reliable,
+      and sustainable technology solutions. We strive to simplify complexity, ensure security, and deliver outstanding user
+      experiences across digital platforms.
+    </p>
+
+    <div class="values">
+      <h3>Our Core Values</h3>
+      <ul>
+        <li>Innovation and Creativity</li>
+        <li>Client-Centric Development</li>
+        <li>Data Security and Privacy</li>
+        <li>Quality Assurance and Integrity</li>
+        <li>Continuous Learning and Adaptation</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 GreenTop IT Company | 
+    <a href="mailto:greentop@gmail.com">greentop@gmail.com</a> | +91 98765 43210
+  </footer>
+
+</body>
+</html>
