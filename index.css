@@ -1,159 +1,194 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #b2f2a8; /* light green */
+        }
+        header {
+            text-align: center;
+            padding: 20px;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 36px;
+            color: black;
+        }
+        header p {
+            margin: 5px 0;
+            font-size: 16px;
+            color: #333;
+        }
+        header nav {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 10px;
+        }
 
-body.index {
-  font-family: Arial, sans-serif;
-  background-color: #b2f2a8;
-  line-height: 1.6;
-  overflow-x: hidden;
-}
+        /* Banner with effect */
+        .banner {
+            width: 100%;
+            height: 300px;
+            background-image: url('https://builtin.com/sites/www.builtin.com/files/styles/og/public/2023-05/largest%20software%20companies.jpg');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            opacity: 0;
+            transform: scale(1.1);
+            animation: bannerFade 1.8s ease-out forwards;
+        }
 
-header {
-  text-align: center;
-  padding: 20px;
-  background-color: #a0e89b;
-}
+        /* Banner animation */
+        @keyframes bannerFade {
+            0% {
+                opacity: 0;
+                transform: scale(1.1);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
 
-header h1 {
-  font-size: 2.5rem;
-  color: #000;
-}
+        /* Intro */
+        .intro {
+            text-align: center;
+            padding: 20px;
+            font-size: 16px;
+            line-height: 1.6;
+        }
 
-header p {
-  font-size: 1rem;
-  color: #333;
-}
+        /* Services */
+        .services {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .services h2 {
+            margin-bottom: 20px;
+            font-size: 28px;
+        }
+        .service-cards {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 0 20px 40px;
+            flex-wrap: wrap;
+        }
+        .card {
+            width: 220px;
+            text-align: center;
+            border-radius: 10px;
+            overflow: hidden;
+            background: #85dd79;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            padding-bottom: 10px;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: transform 0.6s ease, opacity 0.6s ease, box-shadow 0.3s ease;
+        }
+        .card img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px 10px 0 0;
+        }
+        .card p {
+            font-size: 18px;
+            font-weight: 600;
+            color: #333;
+            margin: 10px 0;
+        }
 
-nav {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-top: 10px;
-  gap: 10px;
-}
+        /* Scroll reveal */
+        .card.reveal {
+            opacity: 1;
+            transform: translateY(0);
+            animation: hoverEffect 3s ease-in-out;
+        }
 
-nav a {
-  text-decoration: none;
-  color: white;
-  background: linear-gradient(to right, #0ba360, #3cba92);
-  padding: 10px 20px;
-  border-radius: 30px;
-  font-weight: 600;
-  transition: background 0.3s;
-}
+        /* One-time hover animation */
+        @keyframes hoverEffect {
+            0% {
+                transform: translateY(0) scale(1);
+                box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            }
+            50% {
+                transform: translateY(-10px) scale(1.05);
+                box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            }
+            100% {
+                transform: translateY(0) scale(1);
+                box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            }
+        }
 
-nav a:hover {
-  background: linear-gradient(to left, #0ba360, #3cba92);
-}
+        /* Footer */
+        footer {
+            background-color: #a0e89b;
+            padding: 20px;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            font-size: 14px;
+        }
+        footer div {
+            margin: 10px;
+        }
+        footer h4 {
+            margin-bottom: 10px;
+        }
+        footer a {
+            color: rgb(71, 28, 187);
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
 
-.banner {
-  width: 100%;
-  height: 250px;
-  background-image: url('https://builtin.com/sites/www.builtin.com/files/styles/og/public/2023-05/largest%20software%20companies.jpg');
-  background-size: cover;
-  background-position: center;
-  animation: fadeIn 1.5s ease-in-out forwards;
-}
+        /* Button Styles */
+        .btn-hover {
+            display: inline-block;
+            text-align: center;
+            text-decoration: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: 600;
+            color: #fff;
+            cursor: pointer;
+            margin: 5px;
+            border: none;
+            background-size: 300% 100%;
+            background-position: 0 0;
+            border-radius: 50px;
+            transition: all 0.4s ease-in-out;
+        }
+        .btn-hover.color-5 {
+            background-image: linear-gradient(to right, #0ba360, #3cba92, #30dd8a, #2bb673);
+            box-shadow: 0 4px 15px 0 rgba(23, 168, 108, 0.75);
+        }
+        .btn-hover.color-5:hover {
+            background-position: 100% 0;
+            opacity: 0.9;
+        }
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: scale(1.1); }
-  to { opacity: 1; transform: scale(1); }
-}
-
-.intro {
-  padding: 20px;
-  text-align: center;
-  max-width: 900px;
-  margin: auto;
-}
-
-.services {
-  text-align: center;
-  padding: 20px;
-}
-
-.services h2 {
-  font-size: 1.8rem;
-  margin-bottom: 20px;
-}
-
-.service-cards {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-}
-
-.card {
-  background-color: #85dd79;
-  width: 250px;
-  border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  transition: transform 0.3s ease;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-}
-
-.card img {
-  width: 100%;
-  display: block;
-}
-
-.card p {
-  padding: 10px;
-  font-weight: bold;
-  color: #333;
-}
-
-footer {
-  background-color: #a0e89b;
-  padding: 20px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  text-align: left;
-}
-
-footer div {
-  margin: 10px;
-  min-width: 150px;
-}
-
-footer h4 {
-  margin-bottom: 10px;
-  color: #000;
-}
-
-footer a {
-  display: block;
-  text-decoration: none;
-  color: #471cbb;
-  font-size: 0.9rem;
-  margin-bottom: 5px;
-}
-
-footer a:hover {
-  text-decoration: underline;
-}
-
-@media (max-width: 768px) {
-  nav {
-    flex-direction: column;
-  }
-
-  .card {
-    width: 90%;
-  }
-
-  footer {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-}
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header nav {
+                flex-direction: row;
+                align-items: flex-end;
+            }
+            .service-cards {
+                flex-direction: column;
+                align-items: center;
+            }
+            .card {
+                width: 80%;
+            }
+            .card p {
+                font-size: 16px;
+            }
+        }
