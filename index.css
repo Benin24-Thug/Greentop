@@ -27,14 +27,14 @@ header p {
   color: #333;
 }
 
-/* Updated nav styles */
+/* Navigation */
 header nav {
   display: flex;
-  gap: 10px;
-  justify-content: center;
   flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
   margin-top: 10px;
-  padding-bottom: 10px;
+  padding: 10px;
 }
 
 header nav a {
@@ -212,14 +212,15 @@ footer a:hover {
 /* Responsive Design */
 @media (max-width: 768px) {
   header nav {
-    flex-wrap: wrap;
     justify-content: center;
-    padding: 0 10px;
+    flex-wrap: wrap;
+    padding: 10px;
   }
 
   header nav a {
-    padding: 8px 14px;
     font-size: 14px;
+    padding: 10px 16px;
+    margin: 5px;
   }
 
   .service-cards {
@@ -228,7 +229,7 @@ footer a:hover {
   }
 
   .card {
-    width: 80%;
+    width: 90%;
   }
 
   .card p {
